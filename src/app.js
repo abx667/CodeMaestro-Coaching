@@ -166,18 +166,20 @@ app.get("/contact",(req,res)=>{
 app.get("/",(req,res)=>{
   res.render('index');
 });
-const course=['seo','python','java','jdbc','jquery','laravel','c','c-plus','mysq','Node','php','plsql'];
-let i=0;
+
 
 
 app.post("/search", (req, res) => {
+const course=['seo','python','java','jdbc','jquery','laravel','c','c++','mysq','Node','php','plsql'];
+let i=0;
 let found=false;
   const searchname = req.body.searchname;
   if(req.session.email){
   for(i=0;i<course.length;i++){
-  if(searchname.toLowerCase()===course[i]){
-    found=true;
+  if(searchname.toLowerCase().equals(course[i])){
+    
     res.render(searchname);
+      found=true;
       break;
   }
        
