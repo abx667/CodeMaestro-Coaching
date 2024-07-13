@@ -168,28 +168,32 @@ app.get("/",(req,res)=>{
 });
 const course=['seo','python','java','jdbc','jquery','laravel','c','c-plus','mysq','Node','php','plsql'];
 let i=0;
-let found=false;
+
 
 app.post("/search", (req, res) => {
+let found=false;
   const searchname = req.body.searchname;
   if(req.session.email){
   for(i=0;i<course.length;i++){
   if(searchname.toLowerCase()===course[i]){
-    res.render(searchname);
     found=true;
-    break;
+    res.render(searchname);
+      break;
   }
-  
+       
   }
-}
-else{
-  res.render("login");
-}
   if(!found){ 
   
   // Render the course page based on the course name
   res.render("404");
   }
+    
+  
+}
+else{
+  res.render("login");
+}
+
   
 });
 app.get("/course-inner",(req,res)=>{
