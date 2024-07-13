@@ -169,15 +169,14 @@ app.get("/",(req,res)=>{
 
 
 
-
-app.post("/search", (req, res) => {
 const course=['seo','python','java','jdbc','jquery','laravel','c','c++','mysq','Node','php','plsql'];
-let i=0;
+let i=0
+app.post("/search", (req, res) => {
 let found=false;
   const searchname = req.body.searchname;
   if(req.session.email){
   for(i=0;i<course.length;i++){
-  if(searchname.toLowerCase().equals(course[i])){
+  if(searchname.toLowerCase()===(course[i])){
     found=true;
     res.render(course[i]);
       
