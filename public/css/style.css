@@ -745,7 +745,7 @@ padding-bottom: 5px;
         display: flex;
         justify-content: center;
         align-items:flex-start;
-    flex-direction: row;
+    flex-direction: column;
         padding: 8vw ;
         background-color:#fbe3e8;
     }
