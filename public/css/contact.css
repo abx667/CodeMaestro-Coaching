@@ -96,6 +96,7 @@ input, textarea,select{
     padding: 0.8rem;
     background: var(--color-bg);
     color: var(--color-white);
+    text-transform:none;
 
 }
 
